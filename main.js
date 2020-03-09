@@ -19,3 +19,4 @@ start.addEventListener('click', () =>{
 
 })
 })
+// currently working through edge cases on this one becuase the API from guardian is not randomizing with the guidance of Seth the alumni
