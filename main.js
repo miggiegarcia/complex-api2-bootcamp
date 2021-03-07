@@ -1,22 +1,17 @@
 let start = document.querySelector('button')
-let key ="8fcb1c44-2044-4c3e-9ca0-9fb503a9658c"
+let key ="/facts"
 
 start.addEventListener('click', () =>{
-  // console.log("mig")
-  fetch(`https://api.kanye.rest`)
+  fetch(`https://cat-fact.herokuapp.com/`)
     .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
     .then(response => {
        console.log(response.quote)
-      document.getElementById('kanye').innerHTML=response.quote
+      document.getElementById('factz').innerHTML=response.quote
     })
-    fetch( `https://content.guardianapis.com/search?api-key=8fcb1c44-2044-4c3e-9ca0-9fb503a9658c`)
-      .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
+    fetch( `https://cat-fact.herokuapp.com/facts`)
+      .then(res => res.json())
       .then(response => {
-   document.getElementById('guard').innerHTML= response.response.results[0].webTitle
-
- // console.log(response.response.results[0].webTitle)
-
+   document.getElementById('click').innerHTML= response.response.results[1].facts
 
 })
 })
-// currently working through edge cases on this one becuase the API from guardian is not randomizing with the guidance of Seth the alumni
